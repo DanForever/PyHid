@@ -4,8 +4,8 @@
 ## How to use this library
 This project is designed to simply slot into your codebase without the need to install anything
 
-You will need to grab the latest binary from @libusb/hidapi and place it inside the (pyhid/lib) folder
-This has only been tested on windows, so if you want to run it on linux you will need to modify (pyhid/hidapi.py) and set `pathToDll` to point to the location of the linux shared library binary.
+You will need to grab the latest binary from [hidapi](https://github.com/libusb/hidapi) and place it inside the [pyhid/lib](pyhid/lib) folder
+This has only been tested on windows, so if you want to run it on linux you will need to modify [pyhid/hidapi.py](pyhid/hidapi.py) and set `pathToDll` to point to the location of the linux shared library binary.
 Please feel free to submit a pull request that adds proper cross-platform support :)
 
 ## Getting started with the API
