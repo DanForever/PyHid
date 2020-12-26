@@ -1,5 +1,5 @@
 # PyHid
- A python wrapper for the @libusb/hidapi library
+ A python wrapper for the [hidapi](https://github.com/libusb/hidapi) library
 
 ## How to use this library
 This project is designed to simply slot into your codebase without the need to install anything
