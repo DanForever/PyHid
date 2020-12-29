@@ -26,7 +26,7 @@ class hid_device(Structure):
 # Load the hidapp.dll library
 pathOfScript = os.path.realpath(__file__)
 pathToDll = os.path.dirname(pathOfScript) + "/lib/hidapi.dll"
-_loadedDll = WinDLL(pathToDll)
+_loadedDll = CDLL(pathToDll)
 
 # enumerate()
 _loadedDll.hid_enumerate.restype = POINTER(hid_device_info)
