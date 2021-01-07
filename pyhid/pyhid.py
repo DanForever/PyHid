@@ -11,11 +11,10 @@ class Hid:
         # do stuff!
     """
     
-    def __enter__(self):
+    def init(self):
         hidapi.Init()
-        return self
-        
-    def __exit__(self, exc_type, exc_value, traceback):
+    
+    def shutdown(self):
         hidapi.Shutdown()
         
     def enumerate(self, vendor_id = 0, product_id = 0):
@@ -30,5 +29,19 @@ class Hid:
         return Enumeration(vendor_id, product_id)
         
     def connect(self, path = None, vendor_id = None, product_id = None, serial_number = None):
-        """PyHid will attempt to connect using path if it is defined, otherwise it will use vendor_id, product_id and serial_number (serial_number is optional)"""
+        """PyHid will attempt to connect using path if it is defined, otherwise it will use vendor_id, product_id and serial_number (serial_number is optional).
+        
+        connect() is intended for use as a context manager (i.e. being called from inside a "with" statement.
+        device() is meant for users who want or need manual control. This comes with the caveat that they must ensure that they properly dispose of the device object when they are finished with it.
+        """
         return Device(path, vendor_id, product_id, serial_number)
+    
+    device = connect
+    
+    # Context Manager
+    def __enter__(self):
+        self.init()
+        return self
+    
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.Shutdown()
