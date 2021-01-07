@@ -98,5 +98,4 @@ def ReadTimeout(device, buffer, timeout):
 
 def Write(device, buffer):
     towrite = len(buffer) - 1
-    print("Writing " + str(towrite) + " bytes to hid device")
     return _loadedDll.hid_write(device, buffer, towrite)
