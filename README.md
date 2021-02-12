@@ -11,7 +11,7 @@ Please feel free to submit a pull request that adds proper cross-platform suppor
 ## Getting started with the API
 hidapi.py exposes the raw C API of hidapi, so if you want you can use that directly in more or less the same way you would use hidapi in C.
 
-For a more "pythonic" approach, use pyhid.py which exposes the 'Hid', 'DeviceInformation`, `Device` and `Buffer` classes
+For a more "pythonic" approach, use pyhid.py which exposes the `Hid`, `DeviceInformation`, `Device` and `Buffer` classes
 
 ## Example
 ```python
